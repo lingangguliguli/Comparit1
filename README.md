@@ -16,10 +16,9 @@ A comprehensive full-stack web application that compares food delivery prices ac
 ### Backend
 - **RESTful API**: Clean, well-documented API endpoints
 - **Real-time Data**: Live price fetching from multiple platforms
-- **Caching**: Intelligent caching for optimal performance
 - **Rate Limiting**: Protection against abuse
 - **Error Handling**: Comprehensive error management
-- **Logging**: Detailed logging for monitoring and debugging
+- **Vercel Optimized**: Serverless deployment ready
 
 ## 🛠️ Tech Stack
 
@@ -32,14 +31,14 @@ A comprehensive full-stack web application that compares food delivery prices ac
 
 ### Backend
 - **Node.js** with Express.js framework
-- **Axios** for HTTP requests
-- **Cheerio** for web scraping
-- **Winston** for logging
-- **Node-Cache** for in-memory caching
-- **Joi** for validation
+- **Serverless Functions** for Vercel deployment
+- **CORS** for cross-origin requests
 - **Helmet** for security
+- **Rate Limiting** for API protection
 
 ## 📦 Installation
+
+### Local Development
 
 1. **Clone the repository**
    ```bash
@@ -52,80 +51,49 @@ A comprehensive full-stack web application that compares food delivery prices ac
    npm install
    ```
 
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env
-   # Edit .env with your configuration
-   ```
-
-4. **Start the development server**
+3. **Start the development server**
    ```bash
    npm run dev
    ```
 
-5. **Open your browser**
+4. **Open your browser**
    ```
    http://localhost:3000
    ```
 
-## 🚀 Deployment
-
 ### Vercel Deployment
 
-This project is optimized for Vercel deployment:
+1. **Push to GitHub**
+   ```bash
+   git add .
+   git commit -m "Deploy to Vercel"
+   git push origin main
+   ```
 
-1. **Connect to Vercel**
-   - Push your code to GitHub
-   - Connect your repository to Vercel
-   - Vercel will automatically detect the Node.js project
+2. **Deploy to Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Import your GitHub repository
+   - Vercel will automatically deploy
 
-2. **Environment Variables**
-   Set these in your Vercel dashboard:
+3. **Environment Variables** (Optional)
+   Set in Vercel dashboard:
    ```
    NODE_ENV=production
-   LOG_LEVEL=info
    ```
 
-3. **Build Configuration**
-   The project includes `vercel.json` for proper routing:
-   - API routes are handled by the Express server
-   - Static files are served from the `public` directory
-   - All routes fallback to the main application
+## 🔧 Project Structure
 
-### Manual Deployment
-
-For other platforms:
-
-```bash
-# Build the project
-npm run build
-
-# Start production server
-npm start
 ```
-
-## 🔧 Configuration
-
-### Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-# Server Configuration
-PORT=3000
-NODE_ENV=development
-
-# Frontend URL (for CORS)
-FRONTEND_URL=http://localhost:3000
-
-# Logging
-LOG_LEVEL=info
-
-# API Keys (when available)
-SWIGGY_API_KEY=your_swiggy_api_key
-ZOMATO_API_KEY=your_zomato_api_key
-EATCLUB_API_KEY=your_eatclub_api_key
-DUNZO_API_KEY=your_dunzo_api_key
+compareit/
+├── api/                   # Vercel serverless functions
+│   └── index.js          # Main API handler
+├── public/               # Frontend files
+│   ├── index.html       # Main HTML file
+│   ├── styles.css       # CSS styles
+│   └── app.js          # Frontend JavaScript
+├── vercel.json          # Vercel configuration
+├── package.json
+└── README.md
 ```
 
 ## 📚 API Documentation
@@ -205,35 +173,27 @@ GET /api/offers/swiggy
 GET /api/health
 ```
 
-## 🏗️ Project Structure
+## 🚀 Deployment
 
-```
-compareit/
-├── public/                 # Frontend files
-│   ├── index.html         # Main HTML file
-│   ├── styles.css         # CSS styles
-│   └── app.js            # Frontend JavaScript
-├── routes/                # API routes
-│   ├── search.js         # Search endpoints
-│   ├── offers.js         # Offers endpoints
-│   └── health.js         # Health check
-├── controllers/           # Route controllers
-│   ├── searchController.js
-│   └── offersController.js
-├── services/             # Business logic
-│   ├── searchService.js
-│   ├── offersService.js
-│   ├── platformService.js
-│   └── cacheService.js
-├── middleware/           # Express middleware
-│   ├── validation.js
-│   └── errorMiddleware.js
-├── utils/               # Utilities
-│   └── logger.js
-├── vercel.json         # Vercel configuration
-├── server.js          # Main server file
-├── package.json
-└── README.md
+### Vercel (Recommended)
+
+This project is optimized for Vercel deployment:
+
+1. **Automatic Detection**: Vercel automatically detects the Node.js project
+2. **Serverless Functions**: API routes run as serverless functions
+3. **Static Files**: Frontend files are served from CDN
+4. **Zero Configuration**: Works out of the box
+
+### Manual Deployment
+
+For other platforms:
+
+```bash
+# Install dependencies
+npm install
+
+# Start production server (for platforms that support Node.js)
+npm start
 ```
 
 ## 🔍 Features in Detail
@@ -257,7 +217,7 @@ compareit/
 - **Mobile Optimization**: Seamless mobile experience
 
 ### Performance Optimization
-- **Intelligent Caching**: Reduces API calls and improves speed
+- **Serverless Architecture**: Fast, scalable deployment
 - **Rate Limiting**: Prevents abuse and ensures fair usage
 - **Error Handling**: Graceful fallbacks for failed requests
 - **Responsive Design**: Optimized for all screen sizes
@@ -277,12 +237,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgments
 
 - **Platform APIs**: Thanks to all food delivery platforms for their services
-- **Open Source Libraries**: All the amazing libraries that made this possible
+- **Vercel**: For excellent serverless deployment platform
 - **Community**: Contributors and users who help improve the platform
 
 ## 📞 Support
 
-For support, email contact@compareit.com or create an issue on GitHub.
+For support, create an issue on GitHub or contact the development team.
 
 ---
 
