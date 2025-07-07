@@ -43,7 +43,7 @@ A comprehensive full-stack web application that compares food delivery prices ac
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd compareit
+   cd compareit1
    ```
 
 2. **Install dependencies**
