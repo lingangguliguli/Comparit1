@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compareit - Food Delivery Price Comparison</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                    <span>Compareit</span>
+                </div>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="location-btn">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Mumbai
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Compare Food Delivery Prices</h1>
+                <p class="hero-subtitle">Find the best deals across Swiggy, Zomato, EatClub & Dunzo</p>
+                
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-bar">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="searchInput" placeholder="Search for restaurants, dishes..." class="search-input">
+                        <div class="search-filters">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" id="vegFilter">
+                                <span class="checkmark"></span>
+                                Veg Only
+                            </label>
+                            <select id="sortBy" class="sort-select">
+                                <option value="">Sort by</option>
+                                <option value="price">Price</option>
+                                <option value="rating">Rating</option>
+                                <option value="delivery">Delivery Time</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="search-btn" id="searchBtn">
+                        <i class="fas fa-search"></i>
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon swiggy-color">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Swiggy</h3>
+                        <p>Fast Delivery</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon zomato-color">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Zomato</h3>
+                        <p>Great Variety</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon eatclub-color">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>EatClub</h3>
+                        <p>Best Discounts</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon dunzo-color">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Dunzo</h3>
+                        <p>Quick Service</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results" id="resultsSection" style="display: none;">
+        <div class="container">
+            <div class="results-header">
+                <h2>Search Results</h2>
+                <div class="results-count" id="resultsCount"></div>
+            </div>
+            <div class="results-grid" id="resultsGrid">
+                <!-- Results will be populated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Modal -->
+    <div class="modal" id="comparisonModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Price Comparison</h2>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Comparison content will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading" id="loading" style="display: none;">
+        <div class="spinner"></div>
+        <p>Comparing prices across platforms...</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-utensils"></i>
+                        <span>Compareit</span>
+                    </div>
+                    <p>Compare food delivery prices and save money on every order.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Platforms</h3>
+                    <ul>
+                        <li><a href="#">Swiggy</a></li>
+                        <li><a href="#">Zomato</a></li>
+                        <li><a href="#">EatClub</a></li>
+                        <li><a href="#">Dunzo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Compareit. Made with ❤️ for food lovers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
